@@ -18,6 +18,6 @@ clean: ; rm -rf main*.wasm wasi-http-0.2.0
 run: main.component.wasm ; WASMTIME_BACKTRACE_DETAILS=1 wasmtime serve -Scommon -Dlogging=y main.component.wasm
 
 
-compile: ; tinygo build -o wasm.wasm -target wasm ./main.go
+compile: ; tinygo build -o wasm.wasm -target wasm -gc=leaking -no-debug ./main.go
 
 serve: ; go run ./server.go
