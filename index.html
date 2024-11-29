@@ -6,15 +6,25 @@
     <meta charset="utf-8" />
     <title>Go WebAssembly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar/bundles/datastar.js"></script>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     <script src="wasm_exec.js"></script>
     <script src="wasm.js"></script>
 </head>
 
 <body>
     <h1>WebAssembly</h1>
-    <p>Using WebAssembly calling an kc() method written in Go:</p>
-        <input type="number" id="a" value="60" /> Probabbility (in %) <br> <input type="number" id="b" value="2" /> Reward/Risk Ratio <br> <input type="number" id="result"/> Kelly Criterion <br>
-    <button>Calculate</button>
+    <p>Using WebAssembly calling an kc() method written in Go that is compiled in a self-contained WASM module:</p>
+        Probability (0-100%) <br>
+        <input data-model="kp" type="range" min="0" max="100" id="a" />
+        Reward/Risk Ratio (0.01-100) <br>
+        <input data-show="$kp != ''" data-model="krr" type="range" min="0.01" max="100" id="b" />
+        Calculate Kelly Criterion <br>
+        <button data-show="$krr != ''">Calculate</button>
+        Result (in %): 
+        <output type="number" id="result"/> Move the sliders and then Click!</output>
     <script>
         const button = document.querySelector('button');
 
@@ -26,6 +36,12 @@
             sum_box.value = res;
         });
     </script>
+        <br>
+    <input data-model="input" type="text" />
+
+    <div data-text="$input">
+        replace me
+    </div>
 </body>
 
 </html>
