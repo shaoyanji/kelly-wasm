@@ -13,16 +13,16 @@
 <body>
     <h1>WebAssembly</h1>
     <p>Using WebAssembly calling an kc() method written in Go that is compiled in a self-contained WASM module:</p>
-        <input type="number" min="0" max="100" id="a" />
+        <input type="number" id="a" />
         <div>Reward(1-100) <div ><div> <br>
-            <input  type="number" min="1" max="100" id="b" />
+            <input  type="number" id="b" />
         </div>
         <div >Risk(1-100) <div ></div><br>
-            <input type="number" min="1" max="100" id="c" />
+            <input type="number" id="c" />
         </div>
         <button >Calculate</button>
         <br>Result: <div></div>
-        <input type="number" min="0" max="100" id="result" disabled />
+        <input type="number" id="result" disabled />
     <script>
         const button = document.querySelector('button');
 
