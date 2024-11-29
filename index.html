@@ -15,15 +15,17 @@
 <body>
     <h1>WebAssembly</h1>
     <p>Using WebAssembly calling an kc() method written in Go that is compiled in a self-contained WASM module:</p>
-        Probability (0-100%) <br>
+        Probability (0-100%): <div data-text="$kp"></div> <br>
         <input data-model="kp" type="range" min="0" max="100" id="a" />
-        Reward(1-100) <br>
-        <input data-show="$kp != ''" data-model="kre" type="range" min="1" max="100" id="b" />
-        Risk(1-100) <br>
-        <input data-show="$kre != ''" data-model="kri" type="range" min="1" max="100" id="c" />
+        <div data-show="$kp != ''">Reward(1-100) <div data-text="$kre"></div> <br>
+            <input  data-model="kre" type="range" min="1" max="100" id="b" />
+        </div>
+        <div data-show="$kre != ''">Risk(1-100) <div data-text="$kri"></div><br>
+            <input data-model="kri" type="range" min="1" max="100" id="c" />
+        </div>
         <button data-show="$kri != ''">Calculate</button>
-        Result: <br>
-        <output type="number" id="result"/> Kelly Criterion Optimal%</output>
+        <br>Result: <div></div>
+        <input type="range" min="0" max="100" id="result" disabled />
     <script>
         const button = document.querySelector('button');
 
