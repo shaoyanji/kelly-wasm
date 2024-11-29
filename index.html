@@ -6,7 +6,6 @@
     <meta charset="utf-8" />
     <title>Go WebAssembly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar/bundles/datastar.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <script src="wasm_exec.js"></script>
     <script src="wasm.js"></script>
@@ -15,17 +14,16 @@
 <body>
     <h1>WebAssembly</h1>
     <p>Using WebAssembly calling an kc() method written in Go that is compiled in a self-contained WASM module:</p>
-        Probability (0-100%): <div data-text="$kp"></div> <br>
-        <input data-model="kp" type="range" min="0" max="100" id="a" />
-        <div data-show="$kp != ''">Reward(1-100) <div data-text="$kre"></div> <br>
-            <input  data-model="kre" type="range" min="1" max="100" id="b" />
+        <input type="range" min="0" max="100" id="a" />
+        <div>Reward(1-100) <div ><div> <br>
+            <input  type="range" min="1" max="100" id="b" />
         </div>
-        <div data-show="$kre != ''">Risk(1-100) <div data-text="$kri"></div><br>
-            <input data-model="kri" type="range" min="1" max="100" id="c" />
+        <div >Risk(1-100) <div ></div><br>
+            <input type="range" min="1" max="100" id="c" />
         </div>
-        <button data-show="$kri != ''">Calculate</button>
+        <button >Calculate</button>
         <br>Result: <div></div>
-        <output type="range" min="0" max="100" id="result" disabled />
+        <input type="range" min="0" max="100" id="result" disabled />
     <script>
         const button = document.querySelector('button');
 
