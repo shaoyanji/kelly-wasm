@@ -6,6 +6,11 @@
     <meta charset="utf-8" />
     <title>Go WebAssembly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar/bundles/datastar.js"></script>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+>
     <script src="wasm_exec.js"></script>
     <script src="wasm.js"></script>
 </head>
@@ -19,7 +24,7 @@
         <input data-show="$kp != ''" data-model="krr" type="range" min="0.01" max="100" id="b" />
         Calculate Kelly Criterion <br>
         <button data-show="$krr != ''">Calculate</button>
-        Result: 
+        Result: <br>
         <output type="number" id="result"/> Kelly Criterion Optimal%</output>
     <script>
         const button = document.querySelector('button');
