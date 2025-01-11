@@ -11,6 +11,15 @@ function init() {
             wasm = obj.instance;
             go.run(wasm);
         })
+    } else {
+        fetch(WASM_URL).then(response =>
+            response.arrayBuffer()
+        ).then(bytes =>
+            WebAssembly.instantiate(bytes, go.importObject).then(function (obj) {
+                wasm = obj.instance;
+                go.run(wasm);
+            })
+        );
     }
 }
 
